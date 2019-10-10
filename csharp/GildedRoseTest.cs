@@ -14,5 +14,15 @@ namespace csharp
             app.UpdateQuality();
             Assert.AreEqual("fixme", Items[0].Name);
         }
+
+        [Test]
+        public void ConjureItemsTest()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 4, Quality = 2 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.IsTrue(Items[0].Quality == 0);
+
+        }
     }
 }
