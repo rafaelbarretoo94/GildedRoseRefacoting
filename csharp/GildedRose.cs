@@ -42,7 +42,7 @@ namespace csharp
                             {
                                 if (Items[i].Quality < 50)
                                 {
-                                    Items[i].Quality = Items[i].Quality + 1;
+                                    Items[i].Quality += 1;
                                 }
                             }
 
@@ -50,12 +50,17 @@ namespace csharp
                             {
                                 if (Items[i].Quality < 50)
                                 {
-                                    Items[i].Quality = Items[i].Quality + 1;
+                                    Items[i].Quality += 2;
                                 }
+                            }
+                            else if (Items[i].SellIn < 0)
+                            {
+                                Items[i].Quality = 0;
                             }
                         }
                     }
                 }
+
 
                 if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
                 {
